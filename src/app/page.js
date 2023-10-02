@@ -22,19 +22,17 @@ function Home() {
   };
 
   return (
-    <>
-      <div className="flex flex-col justify-center items-center h-screen w-full">
-        <h1>Next.js Frontend</h1>
-        <p>test above</p>
-        <button
-          className="bg-yellow-500 px-3 py-2 rounded-full"
-          onClick={fetchData}
-          disabled={isLoading}>
-          {isLoading ? "Loading..." : "Fetch Data"}
-        </button>
-        <p>{message}</p>
-      </div>
-    </>
+    <div className="flex flex-col justify-center items-center h-screen w-full">
+      <h1>Next.js Frontend</h1>
+      <button
+        className="bg-yellow-500 px-3 py-2 rounded-full"
+        onClick={fetchData}
+        disabled={isLoading}>
+        {isLoading ? "Loading..." : "Fetch Data"}
+      </button>
+      <p>{message}</p>
+      <p>{process.env.TEST_ENV}</p>
+    </div>
   );
 }
 
