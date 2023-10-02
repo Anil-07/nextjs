@@ -31,7 +31,7 @@ function Home() {
         {isLoading ? "Loading..." : "Fetch Data"}
       </button>
       <p>{message}</p>
-      <p>{process.env.TEST_ENV}</p>
+      <p className="mt-20">{process.env.TEST_ENV}</p>
     </div>
   );
 }
