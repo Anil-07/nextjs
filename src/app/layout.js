@@ -1,6 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-
+import Script from "next/script";
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -19,7 +19,24 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
     {/* Add JSON-LD to your page */}
-<script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+<Script strategy="beforeInteractive"
+          id="my-ldjson-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
+      {
+        "@context": "http://schema.org",
+  "@type": "Person",
+  "name": "Dr.R.Subhashni",
+  "jobTitle": "Professor",
+  "nationality": "India",
+  "gender": "Female",
+  "url": "https://www.example.com/johnsmith",
+  "image": "https://www.example.com/johnsmith.jpg",
+  "description":"Dr. R.Subhashni is a Carnatic Vocalist, and Bharatha Natyam Dancer teaches vocal music online/offline for students at all levels. Also, she teaches Vishnu Sahasranamam, Lalitha Sahasranamam, and Narayaneeyam.Dr. R.Subhashni works inventively in Carnatic Music Vocal - training and has been recognized with the title Naatiya Kalamani, including the Iconic Women award in 2023. By profession, Dr. R.Subhashni is a Professor of Computer Science and Applications at the University level. She is a motivational speaker who provides inspiring talks in Corporates. She contributes her service with personal counseling and welfare towards elevating women's status in society."
+      }
+      `,
+          }}</Script>
       <body className={inter.className}>{children}</body>
     </html>
   )
