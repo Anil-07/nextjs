@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
   "description":"Dr. R.Subhashni is a Carnatic Vocalist, and Bharatha Natyam Dancer teaches vocal music online/offline for students at all levels. Also, she teaches Vishnu Sahasranamam, Lalitha Sahasranamam, and Narayaneeyam.Dr. R.Subhashni works inventively in Carnatic Music Vocal - training and has been recognized with the title Naatiya Kalamani, including the Iconic Women award in 2023. By profession, Dr. R.Subhashni is a Professor of Computer Science and Applications at the University level. She is a motivational speaker who provides inspiring talks in Corporates. She contributes her service with personal counseling and welfare towards elevating women's status in society."
       }
       `,
-          }}</Script>
+          }}
       <body className={inter.className}>{children}</body>
     </html>
   )
