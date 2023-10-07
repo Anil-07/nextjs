@@ -18,8 +18,9 @@ description: product.description
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-    {/* Add JSON-LD to your page */}
-<Script strategy="beforeInteractive"
+    <head>
+        <Script
+          strategy="beforeInteractive"
           id="my-ldjson-data"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -37,6 +38,8 @@ export default function RootLayout({ children }) {
       }
       `,
           }}
+        />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   )
